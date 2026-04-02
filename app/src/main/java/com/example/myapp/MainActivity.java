@@ -34,8 +34,24 @@ public class MainActivity extends AppCompatActivity {
         bntVoltar=findViewById(R.id.buttonVoltar);
         bntAvancar=findViewById(R.id.buttonAvancar);
         imageView=findViewById(R.id.imageView);
+        imageView.setImageResource((imagens[posicao]));
 
         bntAvancar.setOnClickListener(v -> {
+
+            if(posicao == imagens.length-1) {
+                posicao = 0;
+            } else{
+                posicao++;
+            }
+            imageView.setImageResource(imagens[posicao]);
+        });
+        bntVoltar.setOnClickListener(v -> {
+
+            posicao--;
+
+            if(posicao < 0 ) {
+                posicao = imagens.length-1;
+            }
             imageView.setImageResource(imagens[posicao]);
         });
     }
