@@ -2,41 +2,67 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/id"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/buttonVoltar"
+        android:layout_width="147dp"
+        android:layout_height="162dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.611"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/buttonVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Voltar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonAvancar"
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="124dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="44dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:text="Peso"
+        app:layout_constraintEnd_toStartOf="@+id/Altura"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        tools:layout_editor_absoluteY="128dp" />
 
-    <Button
-        android:id="@+id/buttonAvancar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Avançar"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonVoltar"
+    <EditText
+        android:id="@+id/Altura"
+        android:layout_width="150dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:inputType="number|numberDecimal"
+        android:text="Altura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/buttonVoltar"
-        app:layout_constraintTop_toTopOf="@+id/buttonVoltar" />
+        app:layout_constraintStart_toEndOf="@+id/editTextText"
+        tools:layout_editor_absoluteY="128dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.832" />
+
+    <TextView
+        android:id="@+id/imc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="IMC"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:layout_editor_absoluteX="180dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
