@@ -10,12 +10,22 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button bntAvancar, bntVoltar;
+
+    EditText peso, altura;
+
+    Button btnCalcular;
+
+    double imc;
+
+    TextView imcFinal, resultado;
+
     ImageView imageView;
+
     Integer imagens[] = new Integer[]{
             R.drawable.abaixopeso,
             R.drawable.normal,
@@ -33,28 +43,45 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bntVoltar=findViewById(R.id.buttonVoltar);
-        bntAvancar=findViewById(R.id.buttonAvancar);
+        btnCalcular=findViewById(R.id.button);
+        peso=findViewById(R.id.ptPeso);
+        altura=findViewById(R.id.ptAltura);
+        imcFinal=findViewById(R.id.imc);
+        resultado=findViewById(R.id.resultado);
         imageView=findViewById(R.id.imageView);
         imageView.setImageResource((imagens[posicao]));
 
-        bntAvancar.setOnClickListener(v -> {
+        btnCalcular.setOnClickListener(v -> {
+                String srtPeso = peso.getText().toString();
+                String srtAltura = altura.getText().toString();
 
-            if(posicao == imagens.length-1) {
-                posicao = 0;
-            } else{
-                posicao++;
-            }
-            imageView.setImageResource(imagens[posicao]);
+                double peso = Double.parseDouble(srtPeso);
+                double altura = Double.parseDouble(srtAltura);
+
+                imc = peso/(altura*altura);
+
+                DecimalFormat dc = new DecimalFormat("##.##");
+
+                imcFinal.setText(Double.toString(imc));
+
         });
-        bntVoltar.setOnClickListener(v -> {
 
-            posicao--;
 
-            if(posicao < 0 ) {
-                posicao = imagens.length-1;
-            }
-            imageView.setImageResource(imagens[posicao]);
-        });
+        String srtPeso = peso.getText().toString();
+        String srtAltura = altura.getText().toString();
+
+
+
+        Double pesoF = Double.parseDouble(srtPeso);
+        Double alturaF = Double.parseDouble(srtAltura);
+
+
+        if(imc<18.5){
+
+            resultado.setText("Você está abaixo do peso");
+
+
+        }
+
     }
 }
