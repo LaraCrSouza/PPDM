@@ -11,23 +11,28 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.myapp.R;
+
 public class ActivityB extends AppCompatActivity {
-    Button botaoFinish;
-    TextView tv;
+
+    TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_b);
-        tv.findViewById(R.id.tvActivityB);
-        Intent i=getIntent();
-        Bundle b=i.getExtras();
-        String msg = b.getString("msg");
-        tv.setText(msg);
 
-        botaoFinish=findViewById(R.id.btnFechar);
-        botaoFinish.setOnClickListener(v -> {
+        Button bfechar = findViewById(R.id.button_finish);
+        textView=findViewById(R.id.tvMsg);
+
+        String txt= getIntent().getExtras().getString("msg");
+        textView.setText(txt);
+
+
+
+        bfechar.setOnClickListener(v -> {
             finish();
         });
-
     }
 }

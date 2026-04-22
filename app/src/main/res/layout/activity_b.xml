@@ -7,27 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".ActivityB">
 
-    <TextView
-        android:id="@+id/tvActivityB"
+    <Button
+        android:id="@+id/button_finish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Activity B"
-        android:textSize="34sp"
+        android:text="Voltar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintVertical_bias="0.732" />
 
-    <Button
-        android:id="@+id/btnFechar"
+    <TextView
+        android:id="@+id/tvMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="44dp"
-        android:text="Finish"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        android:text="TextView"
+        android:textColor="#3F51B5"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_finish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
