@@ -26,10 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
         AdapterPlaneta adaptador = new AdapterPlaneta(
                 this,
-
+                R.layout.item_lista,
                 //XML com texto e img,
-                pcontroler.listaPlanetas();
-        )
+                pcontroler.listaPlanetas());
 
         lv.setAdapter(adaptador);
 
